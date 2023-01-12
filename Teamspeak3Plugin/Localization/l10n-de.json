@@ -1,0 +1,70 @@
+{
+  "actions": {
+    "mutemic": [
+      {
+        "displayName": "Mikrofon stummschalten",
+        "groupName": ""
+      }
+    ],
+    "speakermute": [
+      {
+        "displayName": "Ausgabe stummschalten",
+        "groupName": ""
+      }
+    ],
+    "away": [
+      {
+        "displayName": "Abwesend / Away",
+        "groupName": ""
+      }
+    ],
+    "awaymessage": [
+      {
+        "displayName": "Abwesenheitsnachricht",
+        "groupName": ""
+      }
+    ],
+    "awaymessageremove": [
+      {
+        "displayName": "Abwesenheitsnachricht löschen",
+        "groupName": ""
+      }
+    ],
+    "switchchannel": [
+      {
+        "displayName": "Channel wechseln",
+        "groupName": ""
+      }
+    ],
+    "changenick": [
+      {
+        "displayName": "Nickname ändern",
+        "groupName": ""
+      }
+    ],
+    "disconnect": [
+      {
+        "displayName": "Aktuelle Verbindung trennen",
+        "groupName": ""
+      }
+    ],
+    "connect": [
+      {
+        "displayName": "Zum Server verbinden",
+        "groupName": ""
+      }
+    ]
+  },
+  "messages": {
+    "connected": "verbunden",
+    "notConnected": "nicht verbunden",
+    "enterAwayMessage": "Abwesenheitsnachricht eingeben:",
+    "removeAwayMessage": "Away Nachricht löschen",
+    "switchChannelSelect": "Channel auswählen, in den gewechselt werden soll:",
+    "changeNickname": "Nickname eingeben, zu dem mit dieser Aktion gewechselt wird:",
+    "connectText": "IP oder Domainnamen eigeben, mit dem verbunden werden soll",
+    "runningButNotConnected": "Teamspeak läuft, ist aber mit keinem Server verbunden. Nur die \"Zum Server verbinden\" Aktion ist verfügbar",
+    "notRunning": "Teamspeak läuft nicht",
+    "noApiKey": "Bitte stelle sicher, dass Du Deinen ClientQuery API Key hinterlegt hast und dieser aktuell ist. Ziehe dafür temporär die \"Setup\" Aktion auf das Loupedeck, trage den Key ein und führe die Aktion aus. Du findest den API Key in Teamspeak unter \"Extras - Optionen - Erweiterungen - Plugins\" - dort bei \"ClientQuery\" auf \"Einstellungen\". Für weitere Informationen, schau auf "
+  }
+}

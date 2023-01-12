@@ -1,0 +1,70 @@
+{
+  "actions": {
+    "mutemic": [
+      {
+        "displayName": "Microphone muet",
+        "groupName": ""
+      }
+    ],
+    "speakermute": [
+      {
+        "displayName": "Muet le haut-parleur/les écouteurs",
+        "groupName": ""
+      }
+    ],
+    "away": [
+      {
+        "displayName": "Absent",
+        "groupName": ""
+      }
+    ],
+    "awaymessage": [
+      {
+        "displayName": "Message d'absence",
+        "groupName": ""
+      }
+    ],
+    "awaymessageremove": [
+      {
+        "displayName": "Supprimer le message d'absence",
+        "groupName": ""
+      }
+    ],
+    "switchchannel": [
+      {
+        "displayName": "Changer de canal",
+        "groupName": ""
+      }
+    ],
+    "changenick": [
+      {
+        "displayName": "Changer de pseudonyme",
+        "groupName": ""
+      }
+    ],
+    "disconnect": [
+      {
+        "displayName": "Déconnexion du serveur actuel",
+        "groupName": ""
+      }
+    ],
+    "connect": [
+      {
+        "displayName": "Connecter au serveur",
+        "groupName": ""
+      }
+    ]
+  },
+  "messages": {
+    "connected": "connecté",
+    "notConnected": "non connecté",
+    "enterAwayMessage": "Entrez le message d'absence:",
+    "removeAwayMessage": "supprimer le message d'absence",
+    "switchChannelSelect": "Sélectionnez la chaîne sur laquelle vous voulez passer:",
+    "changeNickname": "Entrez le pseudonyme à changer avec cette action:",
+    "connectText": "Entrez l'IP ou le nom de domaine pour vous connecter:",
+    "runningButNotConnected": "Teamspeak fonctionne mais n'est pas connecté à un serveur - vous ne pouvez utiliser que l'action \"Connecter\"",
+    "notRunning": "Teamspeak ne tourne pas",
+    "noApiKey": "Veuillez vous assurer d'entrer votre clé API TS3 ClientQuery actuelle. Pour ce faire, mettez temporairement l'action \"Setup\" sur votre Loupedeck et entrez la clé API dans le formulaire. Vous pouvez trouver la clé API dans Teamspeak : \"Tools - Options - Addons - Plugins - ClientQuery -> Settings\". Pour plus d'informations, veuillez vous référer à "
+  }
+}

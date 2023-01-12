@@ -1,0 +1,70 @@
+{
+  "actions": {
+    "mutemic": [
+      {
+        "displayName": "Mute Microphone",
+        "groupName": ""
+      }
+    ],
+    "speakermute": [
+      {
+        "displayName": "Mute Output",
+        "groupName": ""
+      }
+    ],
+    "away": [
+      {
+        "displayName": "Away",
+        "groupName": ""
+      }
+    ],
+    "awaymessage": [
+      {
+        "displayName": "Away Message",
+        "groupName": ""
+      }
+    ],
+    "awaymessageremove": [
+      {
+        "displayName": "Remove Away Message",
+        "groupName": ""
+      }
+    ],
+    "switchchannel": [
+      {
+        "displayName": "Switch Channel",
+        "groupName": ""
+      }
+    ],
+    "changenick": [
+      {
+        "displayName": "Change Nickname",
+        "groupName": ""
+      }
+    ],
+    "disconnect": [
+      {
+        "displayName": "Disconnect from current Server",
+        "groupName": ""
+      }
+    ],
+    "connect": [
+      {
+        "displayName": "Connect to Server",
+        "groupName": ""
+      }
+    ]
+  },
+  "messages": {
+    "connected": "connected",
+    "notConnected": "not connected",
+    "enterAwayMessage": "Enter away message:",
+    "removeAwayMessage": "Remove Away Message",
+    "switchChannelSelect": "Select channel you want to switch to:",
+    "changeNickname": "Enter Nickname to change to with this action:",
+    "connectText": "Enter IP or domain name to connect to",
+    "runningButNotConnected": "Teamspeak is running but not connected to a server - you may only use the \"Connect\" action",
+    "notRunning": "Teamspeak is not running",
+    "noApiKey": "Please make sure to enter your current TS3 ClientQuery API Key. To do that, temporarily pull the \"Setup\" Action to your Loupedeck and enter the API Key in the form. You can find the API Key in Teamspeak \"Tools - Options - Addons - Plugins - ClientQuery -> Settings\". For more information, please refer to "
+  }
+}
