@@ -10,16 +10,20 @@
 
     internal class SwtichChannel : PluginDynamicCommand
     {
+        // Link the plugin and localization instance, set global vars
         private Teamspeak3Plugin _plugin;
         private l10n _l10n;
         public SwtichChannel() : base() { }
         protected override Boolean OnLoad()
         {
+            // assign to instances and subscribe to events
             this._plugin = base.Plugin as Teamspeak3Plugin;
             this._plugin.ChannelListUpdated += (sender, e) => this.BuildChannelList();
             this._plugin.TeamspeakConnStatChange += (sender, e) => this.ActionImageChanged();
             this._l10n = new l10n(this._plugin);
+            // load localization into local dict and build the parameter(s)
             Dictionary<String, String> l7dValues = this._l10n.GetL7dNames("switchchannel");
+            // since list/tree/text inputs are handled somewhat differently than normal parameters, have to assing the displayname and group differently for those
             if (l7dValues != null)
             {
                 this.DisplayName = l7dValues["displayName"];
@@ -34,11 +38,14 @@
             this.MakeProfileAction($"list;{this._l10n.GetL7dMessage("switchChannelSelect")}");
             return !(this._plugin is null) && base.OnLoad();
         }
+        // building the channel list to show in the selection field in the UI
         private void BuildChannelList()
         {
+            // this removes everything there is so it's loaded every time the config for a button is loaded
             this.RemoveAllParameters();
             foreach (String channel in this._plugin.channelList)
             {
+                // Teamspeak ClientQuery uses very nasty unicode strings for most non-word characters which takes a bit of RegEx effort to show pretty
                 String cleanDisplayFromUnicodeMadness = Regex.Replace(Encoding.UTF8.GetString(Encoding.GetEncoding(28591).GetBytes(Regex.Unescape(channel))), @"(?:\[(.{0,1})spacer\]\s){0,1}", "");
                 this.AddParameter(channel, cleanDisplayFromUnicodeMadness, groupName: "");
             }
@@ -50,11 +57,14 @@
         }
         protected override BitmapImage GetCommandImage(String actionParameter, PluginImageSize imageSize)
         {
+            // Teamspeak ClientQuery uses very nasty unicode strings for most non-word characters which takes a bit of RegEx effort to show pretty
             String cleanDisplayFromUnicodeMadness = Regex.Replace(Encoding.UTF8.GetString(Encoding.GetEncoding(28591).GetBytes(Regex.Unescape(actionParameter))), @"(?:\[(.{0,1})spacer\]\s){0,1}", "");
+            // as channel names in Teamspeak can be up to 40 chars long, they wouldn't fit on the display (at least not so that anyone could still read them), so cut them off
             if (cleanDisplayFromUnicodeMadness.Length > 20)
             {
                 cleanDisplayFromUnicodeMadness = cleanDisplayFromUnicodeMadness.Substring(0, 20) + "...";
             }
+            // single strings without spaces and more than 10 chars would go out of bounds of the button display, so cut them to a reasonable length
             if (cleanDisplayFromUnicodeMadness.Length > 10)
             {
                 if (cleanDisplayFromUnicodeMadness.Substring(0, 10).Count(Char.IsWhiteSpace) == 0)

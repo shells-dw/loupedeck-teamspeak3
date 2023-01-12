@@ -7,15 +7,19 @@
 
     internal class Connect : PluginDynamicCommand
     {
+        // Link the plugin and localization instance, set global vars
         private Teamspeak3Plugin _plugin;
         private l10n _l10n;
         public Connect() : base() { }
         protected override Boolean OnLoad()
         {
+            // assign to instances and subscribe to events
             this._plugin = base.Plugin as Teamspeak3Plugin;
             this._plugin.TeamspeakConnStatChange += (sender, e) => this.ActionImageChanged();
             this._l10n = new l10n(this._plugin);
+            // load localization into local dict and build the parameter(s)
             Dictionary<String, String> l7dValues = this._l10n.GetL7dNames("connect");
+            // since list/tree/text inputs are handled somewhat differently than normal parameters, have to assing the displayname and group differently for those
             if (l7dValues != null)
             {
                 this.DisplayName = l7dValues["displayName"];

@@ -6,7 +6,6 @@ namespace Loupedeck.Teamspeak3Plugin
     using System.Collections.Generic;
     using System.Linq;
     using System.Diagnostics;
-    using Loupedeck.Teamspeak3Plugin.Helper;
 
     // This class contains the plugin-level logic of the Loupedeck plugin.
 
@@ -202,7 +201,7 @@ namespace Loupedeck.Teamspeak3Plugin
             }
             else
             {
-                this.OnPluginStatusChanged(Loupedeck.PluginStatus.Error, this._l10n.GetL7dMessage("noApiKey"), "https://github.com/shells-dw/loupedeck-teamspeak3", "GitHub Readme");
+                this.OnPluginStatusChanged(Loupedeck.PluginStatus.Error, this._l10n.GetL7dMessage("noApiKey"), "https://github.com/shells-dw/loupedeck-teamspeak3#setup", "GitHub Readme");
                 this.Log.Info($"{DateTime.Now} - TS3: Plugin in non-nominal status - apiKey == null");
                 return true;
             }

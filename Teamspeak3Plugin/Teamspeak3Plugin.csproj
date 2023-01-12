@@ -88,7 +88,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="License.txt" />
     <EmbeddedResource Include="Resources\connectOff.png" />
     <EmbeddedResource Include="Resources\connectOn.png" />
     <EmbeddedResource Include="Resources\notConnected.png" />
