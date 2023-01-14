@@ -64,11 +64,13 @@ If you'd like to drop me a coffee for the hours I've spent on this:
 or use Ko-Fi [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y4CE9LH)
 
 # Changelog
-## [1.0.0] - 2023-01-12
-- initial release
+## [1.1.0] - 2023-01-14
+- Removed the need for Newtonsoft.Json and went with JSON functions that come with the SDK to avoid potential mismatch issues between the bundled and the NuGet Newtonsoft.Json version in the future
 
 <details><summary>Changelog History</summary><p>
- -
+
+## [1.0.0] - 2023-01-12
+- initial release
 
 </p></details>
 

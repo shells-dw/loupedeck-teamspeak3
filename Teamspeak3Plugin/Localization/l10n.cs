@@ -2,17 +2,12 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     internal class l10n
     {
         private readonly String[] SupportedLanguageCodes = { "de", "en", "fr" };
         private readonly Teamspeak3Plugin _plugin;
-        private Dictionary<String, Dictionary<String, JObject>> actionL10n;
+        private Dictionary<String, dynamic> actionL10n;
 
         public l10n(Teamspeak3Plugin plugin)
         {
@@ -21,30 +16,17 @@
         }
         private void ReadL10nFiles()
         {
-            this.actionL10n = new Dictionary<String, Dictionary<String, JObject>>();
+            this.actionL10n = new Dictionary<String, dynamic>();
             foreach (var code in this.SupportedLanguageCodes)
             {
                 this.actionL10n[code] = GetL7dData(code);
             }
         }
-        private static Dictionary<String, JObject> GetL7dData(String lc)
+        private static dynamic GetL7dData(String lc)
         {
-            var dataStream = EmbeddedResources.GetStream(EmbeddedResources.FindFile("l10n-" + lc + ".json"));
-            Dictionary<String, JObject> result = new Dictionary<String, JObject>();
-            if (dataStream.Length > 0)
-            {
-                var serializer = new JsonSerializer();
-                var reader = new StreamReader(dataStream, Encoding.UTF8);
-                using (var jtr = new JsonTextReader(reader))
-                {
-                    result = serializer.Deserialize<Dictionary<String, JObject>>(jtr);
-                }
-                return result;
-            }
-            else
-            {
-                return result;
-            }
+            var embededText = EmbeddedResources.ReadTextFile(EmbeddedResources.FindFile("l10n-" + lc + ".json"));
+            var result = Loupedeck.JsonHelpers.DeserializeObject<dynamic>(embededText);
+            return result;
         }
 
         public String GetCurrentLanguageCode()
